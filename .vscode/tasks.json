@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build image",
+            "type": "shell",
+            "command": "docker build -t mlimage .",
+            "problemMatcher": []
+        },
+        {
+            "label": "Start container",
+            "type": "shell",
+            "command": "docker run --rm --name mlcontainer -d mlimage",
+            "problemMatcher": []
+        },
+        {
+            "label": "Stop container",
+            "type": "shell",
+            "command": "docker stop mlcontainer",
+            "problemMatcher": []
+        },
+    ]
+}
