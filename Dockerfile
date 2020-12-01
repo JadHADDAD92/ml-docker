@@ -21,7 +21,8 @@ RUN apt update && \
     apt install -y python3-pip libsndfile1 sox ffmpeg
 
 # Create symlinks
-RUN ln -s /usr/bin/pip3 /usr/bin/pip
+RUN ln -s /usr/bin/pip3 /usr/bin/pip && \
+    ln -s /usr/bin/python3 /usr/bin/python
 
 # Install pip packages
 COPY ./requirements.txt /tmp/requirements.txt
