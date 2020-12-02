@@ -18,7 +18,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install dependencies packages
 RUN apt update && \
-    apt install -y python3-pip libsndfile1 sox ffmpeg
+    apt install -y python3-pip libsndfile1 sox ffmpeg mediainfo
 
 # Create symlinks
 RUN ln -s /usr/bin/pip3 /usr/bin/pip && \
