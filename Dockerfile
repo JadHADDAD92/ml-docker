@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM nvidia/cuda
 
 # Create the user
 ARG USERNAME=mluser
