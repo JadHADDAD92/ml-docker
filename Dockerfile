@@ -1,5 +1,4 @@
-FROM nvidia/cuda
-
+FROM nvidia/cuda:11.1.1-runtime-ubuntu20.04
 # Configure Timezone so apt doesn't hang
 ENV TZ=Europe/Paris
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
