@@ -4,11 +4,8 @@ ENV TZ=Europe/Paris
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install convenience packages
-RUN apt update && \
-    apt install -y git tree
-
-# Install pip
-RUN apt install -y python3-pip
+RUN apt update --fix-missing && \
+    apt install -y git tree python3-pip python3-pip libsndfile1 sox ffmpeg mediainfo
 
 # Create symlinks
 RUN ln -s /usr/bin/pip3 /usr/bin/pip && \
@@ -17,9 +14,6 @@ RUN ln -s /usr/bin/pip3 /usr/bin/pip && \
 # Install pip packages
 COPY ./requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
-
-# Install dependencies packages
-RUN apt install -y python3-pip libsndfile1 sox ffmpeg mediainfo
 
 # Create the user
 ARG USERNAME=mluser
