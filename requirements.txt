@@ -5,7 +5,7 @@ gensim==3.8.3
 ipython==7.20.0
 ipykernel==5.5.0
 matplotlib==3.3.4
-opensmile==1.0.1
+opensmile==2.0.0
 optuna==2.5.0
 pandas==1.2.2
 pylint==2.7.1
