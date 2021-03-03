@@ -7,7 +7,7 @@ ipykernel==5.5.0
 matplotlib==3.3.4
 opensmile==2.0.0
 optuna==2.5.0
-pandas==1.2.2
+pandas==1.2.3
 pycm==3.0
 pylint==2.7.2
 pytorch-lightning==1.2.1
