@@ -1,5 +1,5 @@
 albumentations==0.5.2
-click==7.1.2
+av==8.0.3
 fasttext==0.9.2
 gensim==3.8.3
 ipython==7.21.0
@@ -17,3 +17,4 @@ torch==1.7.1
 torchvision==0.8.2
 torchtext==0.8.1
 torch_optimizer==0.1.0
+typer==0.3.2
