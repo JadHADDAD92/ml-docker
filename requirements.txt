@@ -10,7 +10,7 @@ optuna==2.7.0
 pandas==1.2.4
 pycm==3.1
 pylint==2.8.2
-pytorch-lightning==1.2.3
+pytorch-lightning==1.2.10
 scikit-learn==0.24.2
 seaborn==0.11.1
 torch==1.7.1
