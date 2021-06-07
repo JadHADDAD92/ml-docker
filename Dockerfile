@@ -8,8 +8,7 @@ RUN apt update --fix-missing && \
     apt install -y git tree python3-pip python3-pip libsndfile1 sox ffmpeg mediainfo
 
 # Create symlinks
-RUN ln -s /usr/bin/pip3 /usr/bin/pip && \
-    ln -s /usr/bin/python3 /usr/bin/python
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # Install pip packages
 COPY ./requirements.txt /tmp/requirements.txt
