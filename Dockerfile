@@ -5,7 +5,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install convenience packages
 RUN apt update --fix-missing && \
-    apt install -y git tree python3-pip python3-pip libsndfile1 sox ffmpeg mediainfo
+    apt install -y zsh git wget locales tree python3-pip python3-pip libsndfile1 sox ffmpeg mediainfo
+
+# Setup Locale for emoji/unicode support
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Create symlinks
 RUN ln -s /usr/bin/python3 /usr/bin/python
@@ -25,8 +31,10 @@ RUN groupadd --gid $USER_GID $USERNAME && \
     apt-get install -y sudo && \
     echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
     chmod 0440 /etc/sudoers.d/$USERNAME
+
 USER $USERNAME
+RUN sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+COPY ./.zshrc /home/mluser/.zshrc
 
-ENV SHELL /bin/bash
-
+ENV SHELL zsh
 CMD tail -f /dev/null
