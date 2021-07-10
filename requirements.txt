@@ -15,7 +15,7 @@ pylint==2.8.3
 pytorch-lightning==1.2.3
 scikit-learn==0.24.2
 seaborn==0.11.1
-torch==1.7.1
+torch==1.9.0
 torchvision==0.8.2
 torchtext==0.8.1
 torch_optimizer==0.1.0
